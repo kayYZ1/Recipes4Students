@@ -91,6 +91,7 @@ export default {
                 loading.value = false
             } catch (error) {
                 apiErr.value = error.response.data;
+                loading.value = false
             }
         })
 

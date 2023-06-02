@@ -49,6 +49,7 @@ export default {
             }
             catch (error) {
                 apiErr.value = error.response.data
+                loading.value = false
                 console.log(apiErr)
             }
         })
