@@ -7,7 +7,8 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-xs-only" v-if="authStore.user">
-            <v-btn flat v-for="item in menuItemsAfterLogin" :key="item.title" :to="item.path" @click="handleLogout(item.title)">
+            <v-btn flat v-for="item in menuItemsAfterLogin" :key="item.title" :to="item.path"
+                @click="handleLogout(item.title)">
                 {{ item.title }}
             </v-btn>
         </v-toolbar-items>
@@ -25,15 +26,16 @@ import { useAuthStore } from '@/stores';
 export default {
     setup() {
         const authStore = useAuthStore()
+        console.log(authStore.user)
         return { authStore }
     },
     data() {
         return {
-            appTitle: "r4s",
+            appTitle: "Home",
             menuItems: [
                 { title: "Add a recipe", path: "/add" },
                 { title: "Login", path: "/login" },
-                { title: "Register", path: "/register"}
+                { title: "Register", path: "/register" }
             ],
             menuItemsAfterLogin: [
                 { title: "Add a recipe", path: "/add" },
