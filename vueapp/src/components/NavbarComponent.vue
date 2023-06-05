@@ -1,7 +1,7 @@
 <template>
-    <v-toolbar app>
+    <v-toolbar app color="black">
         <v-toolbar-title>
-            <router-link to="/" style="cursor: pointer; color: black; text-decoration: none;">
+            <router-link to="/" style="cursor: pointer; color: white; text-decoration: none;">
                 {{ appTitle }}
             </router-link>
         </v-toolbar-title>
