@@ -4,6 +4,8 @@
 		<v-card-title>
 			{{ recipe.title }}
 		</v-card-title>
+		<v-spacer></v-spacer>
+		<v-btn @click="DeleteRecipe()">Delete</v-btn>
 		<v-card-subtitle>
 			Added by {{ recipe.username }}, s{{ recipe.index }}
 		</v-card-subtitle>
@@ -28,6 +30,8 @@
 	</v-card>
 </template>
 <script>
+import axios from "axios"
+
 export default {
 	props: {
 		recipe: {
@@ -38,6 +42,14 @@ export default {
 	data() {
 		return {
 			show: false,
+		}
+	},
+	methods: {
+		async DeleteRecipe() {
+			const response = await axios.delete(
+				`http://localhost:5200/api/Recipes/${this.recipe.id}`
+			)
+			console.log(response)
 		}
 	}
 }
