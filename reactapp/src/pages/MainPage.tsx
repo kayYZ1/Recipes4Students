@@ -29,7 +29,7 @@ const MainPage = () => {
 	}, [])
 
 	return (
-		<Container maxWidth="md" style={{ marginTop: "5rem" }}>
+		<Container maxWidth="md" style={{ marginTop: "5rem", marginBottom: "5rem" }}>
 			{
 				loading ?
 					<SpinnerComponent /> :

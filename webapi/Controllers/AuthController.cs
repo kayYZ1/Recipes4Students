@@ -34,6 +34,9 @@ namespace webapi.Controllers
             }
             if (_context.Users.Any(u => u.Username == request.Username)) {
                 return BadRequest("Username already taken.");
+            }
+            if (_context.Users.Any(u => u.Index == request.Index)) {
+                return BadRequest("Index already exist.");
             } 
             else
             {

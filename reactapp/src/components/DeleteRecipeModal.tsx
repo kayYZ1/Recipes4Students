@@ -29,6 +29,7 @@ const DeleteRecipeModal = (recipe: IRecipe) => {
     const response = await axios.delete(`http://localhost:5200/api/Recipes/${recipe.id}`)
     console.log(response)
     setOpen(false)
+    window.location.reload()
   }
 
   return (

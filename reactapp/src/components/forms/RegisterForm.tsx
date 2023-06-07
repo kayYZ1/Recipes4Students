@@ -7,7 +7,7 @@ import axios from 'axios';
 
 interface IRegister {
 	email: string,
-	index: number,
+	index: number | unknown,
 	password: string,
 	username: string,
 	field: string
@@ -21,7 +21,7 @@ const RegisterForm = () => {
 	const initialValues = {
 		email: '',
 		password: '',
-		index: 0,
+		index: null,
 		username: '',
 		field: ''
 	};
