@@ -8,37 +8,41 @@ using webapi.Services.RecipesService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCors(options => {
-    options.AddDefaultPolicy(policy => {
-        policy.WithOrigins("https://localhost:5002", "http://localhost:5002", "https://localhost:5173", "http://localhost:5173").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
-    });    
+builder.Services.AddCors(options =>
+{
+  options.AddDefaultPolicy(policy =>
+  {
+    policy.WithOrigins(
+    "https://localhost:4200", "http://localhost:4200",
+    "https://localhost:5002", "http://localhost:5002", "https://localhost:5173", "http://localhost:5173").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
+  });
 });
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
-    {
-        In = ParameterLocation.Header,
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey
-    });
-    options.OperationFilter<SecurityRequirementsOperationFilter>();
+  options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+  {
+    In = ParameterLocation.Header,
+    Name = "Authorization",
+    Type = SecuritySchemeType.ApiKey
+  });
+  options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 builder.Services.AddAuthentication(x =>
 {
-    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+  x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+  x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+  x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        ValidateAudience = false,
-        ValidateIssuer = false,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-            builder.Configuration.GetSection("AppSettings:Token").Value!))
-    };
+  options.TokenValidationParameters = new TokenValidationParameters
+  {
+    ValidateIssuerSigningKey = true,
+    ValidateAudience = false,
+    ValidateIssuer = false,
+    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+          builder.Configuration.GetSection("AppSettings:Token").Value!))
+  };
 });
 
 builder.Services.AddControllers();
@@ -52,8 +56,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(); 
+  app.UseSwagger();
+  app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
