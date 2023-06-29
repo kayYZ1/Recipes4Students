@@ -7,9 +7,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { AllRecipesComponent } from '../recipes/pages/all-recipes/all-recipes.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [MainPageComponent, AllRecipesComponent],
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatTabsModule, MatListModule]
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
+    MatListModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatCardModule,
+  ],
 })
 export class MainModule {}

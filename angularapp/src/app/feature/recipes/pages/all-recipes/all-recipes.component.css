@@ -1,6 +1,7 @@
 .all-recipes-container {
   display: flex;
   justify-content: center;
+  max-width: 200vh;
 }
 
 .all-recipes-h2 {
