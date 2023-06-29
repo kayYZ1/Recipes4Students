@@ -1,0 +1,13 @@
+.main-toolbar {
+  border-bottom: 1px solid #303030
+}
+
+.main-toolbar-title {
+  padding-left: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.main-toolbar-spacer {
+  flex: 1 1 auto;
+}

@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core"
   providedIn: "root"
 })
 
-export class AllRecipeService {
+export class RecipeService {
   constructor(private _http: HttpClient) {}
 
   fetchData() {

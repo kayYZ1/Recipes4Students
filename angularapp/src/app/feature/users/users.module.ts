@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
+import { MatDividerModule } from '@angular/material/divider';
+
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatDividerModule
   ]
 })
 export class UsersModule { }

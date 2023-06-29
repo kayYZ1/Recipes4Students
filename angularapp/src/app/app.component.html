@@ -1,1 +1,15 @@
-<router-outlet></router-outlet>
+<mat-toolbar class="main-toolbar">
+  <button mat-icon-button routerLink="" class="main-toolbar-icon">
+    <mat-icon>forest</mat-icon>
+  </button>
+  <span class="main-toolbar-title">Angular</span>
+  <span class="main-toolbar-spacer"></span>
+  <nav mat-tab-nav-bar class="main-toolbar-nav" #tabPanel>
+    <a mat-tab-link routerLink="new-recipe" disabled>New</a>
+    <a mat-tab-link routerLink="login">Login</a>
+    <a mat-tab-link routerLink="register">Register</a>
+  </nav>
+</mat-toolbar>
+<mat-tab-nav-panel #tabPanel>
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>
