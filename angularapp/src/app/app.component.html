@@ -4,7 +4,7 @@
   </button>
   <span class="main-toolbar-title">Angular</span>
   <span class="main-toolbar-spacer"></span>
-  <nav mat-tab-nav-bar class="main-toolbar-nav" #tabPanel>
+  <nav mat-tab-nav-bar class="main-toolbar-nav" [tabPanel]="tabPanel">
     <a mat-tab-link routerLink="new-recipe" disabled>New</a>
     <a mat-tab-link routerLink="login">Login</a>
     <a mat-tab-link routerLink="register">Register</a>

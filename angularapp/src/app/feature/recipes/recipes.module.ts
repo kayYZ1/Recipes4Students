@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
 
-import { AllRecipesComponent } from './pages/all-recipes/all-recipes.component';
-import { NewRecipeComponent } from './pages/new-recipe/new-recipe.component';
+import { AllRecipesModule } from './pages/all-recipes/all-recipes.module';
+import { AllRecipesRoutingModule } from './recipes.routing.module';
+import { NewRecipeModule } from './pages/new-recipe/new-recipe.module';
 
 @NgModule({
-  declarations: [NewRecipeComponent, AllRecipesComponent],
-  imports: [CommonModule, MatDividerModule, MatGridListModule, MatCardModule],
-  exports: [AllRecipesComponent],
+  declarations: [],
+  imports: [AllRecipesModule, AllRecipesRoutingModule, NewRecipeModule],
+  exports: [],
 })
 export class RecipesModule {}

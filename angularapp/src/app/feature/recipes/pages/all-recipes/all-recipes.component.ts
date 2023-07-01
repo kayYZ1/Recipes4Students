@@ -8,6 +8,7 @@ import { RecipeService } from '../../services/RecipeService';
   styleUrls: ['./all-recipes.component.css'],
   providers: [RecipeService],
 })
+
 export class AllRecipesComponent {
   title = 'fetchRecipes';
   recipes: Recipe[] = [];

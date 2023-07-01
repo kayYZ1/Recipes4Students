@@ -1,17 +1,16 @@
 <div class="all-recipes-container">
-  <h2 class="all-recipes-h2">Is it working?..</h2>
-  <mat-divider></mat-divider>
-  <mat-grid-list cols="3">
-    <mat-grid-tile *ngFor="let recipe of recipes" id="{{recipe.id}}">
-      <mat-card>
-        <mat-card-header>{{ recipe.title }}</mat-card-header>
-        <mat-card-content>{{ recipe.description }}</mat-card-content>
-        <img mat-card-sm-image src="{{recipe.imageURL}}"/>
-        <mat-card-actions>
-          <p>Visit the link or idk</p>
-        </mat-card-actions>
-        <mat-card-footer>Added by {{recipe.username}} / {{recipe.index}}</mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <h2 class="all-recipes-h2">Is it working?..XDDD</h2>
+  <hr class="all-recipes-hr">
+  <section class="all-recipes-grid">
+    <div class="all-recipes-grid-item">
+      <article class="all-recipes-card" *ngFor="let recipe of recipes">
+        <img class="all-recipes-card-image" src="{{recipe.imageURL}}" alt="{{recipe.id}}">
+        <div class="all-recipes-card-content">
+          <h1 class="all-recipes-card-title">{{recipe.title}}</h1>
+          <p class="all-recipes-card-text">{{recipe.description }}</p>
+          <button class="all-recipes-card-btn">Idk</button>
+        </div>
+      </article>
+    </div>
+  </section>
 </div>
