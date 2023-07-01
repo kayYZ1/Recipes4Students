@@ -1,9 +1,31 @@
 .login-container {
   display: flex;
   justify-content: center;
-  min-width: 768px;
+  align-items: center;
+  flex-direction: column;
+  height: 30vh;
+  /* Adjust this based on your container's height */
 }
 
 h2 {
   font-weight: 300;
+  font-size: 2em;
+}
+
+.login-form {
+  min-width: 20vh;
+  max-width: 40vh;
+  width: 100%;
+}
+
+.input-full-width {
+  width: 100%;
+  max-width: 400px;
+  /* Adjust this based on your desired form width */
+}
+
+.form-btn {
+  font-weight: 300;
+  font-size: 0.9em;
+  text-transform: uppercase;
 }

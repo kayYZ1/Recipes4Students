@@ -9,6 +9,5 @@ import { MaterialModule } from 'src/app/shared/material.module';
   imports: [MaterialModule, CommonModule],
   exports: [],
   declarations: [AllRecipesComponent],
-  providers: [],
 })
 export class AllRecipesModule { }

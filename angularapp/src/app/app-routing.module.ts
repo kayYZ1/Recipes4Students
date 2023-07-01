@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './feature/users/pages/login/login.component';
-import { RegisterComponent } from './feature/users/pages/register/register.component';
 
 const routes: Routes = [
   {
@@ -9,12 +7,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./feature/recipes/recipes.module').then((m) => m.RecipesModule),
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
   {
-    path: 'new-recipe',
+    path: '',
     loadChildren: () =>
-      import('./feature/recipes/recipes.module').then((m) => m.RecipesModule),
+      import('./feature/users/users.module').then((u) => u.UsersModule),
   },
 ];
 

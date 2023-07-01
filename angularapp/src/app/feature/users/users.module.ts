@@ -1,18 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
 
-import { MatDividerModule } from '@angular/material/divider';
+import { LoginModule } from './pages/login/login.module';
+import { RegisterModule } from './pages/register/register.module';
+import { UsersRoutingModule } from './users.routing.module';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent
-  ],
-  imports: [
-    CommonModule,
-    MatDividerModule
-  ]
+  declarations: [],
+  imports: [LoginModule, RegisterModule, UsersRoutingModule],
 })
-export class UsersModule { }
+export class UsersModule {}
