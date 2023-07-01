@@ -4,7 +4,7 @@
   <section class="all-recipes-grid">
     <div class="all-recipes-grid-item">
       <article class="all-recipes-card" *ngFor="let recipe of recipes">
-        <img class="all-recipes-card-image" src="{{recipe.imageURL}}" alt="{{recipe.id}}">
+        <img class="all-recipes-card-image" src="{{recipe.imageURL}}" alt="{{recipe.title}}">
         <div class="all-recipes-card-content">
           <h1 class="all-recipes-card-title">{{recipe.title}}</h1>
           <p class="all-recipes-card-text">{{recipe.description }}</p>
