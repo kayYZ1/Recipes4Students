@@ -4,10 +4,15 @@
   </button>
   <span class="main-toolbar-title">Angular</span>
   <span class="main-toolbar-spacer"></span>
-  <nav mat-tab-nav-bar class="main-toolbar-nav" [tabPanel]="tabPanel">
+  <nav mat-tab-nav-bar class="main-toolbar-nav" [tabPanel]="tabPanel" *ngIf="!(jwtToken$ | async)">
     <a mat-tab-link routerLink="new-recipe" disabled>New</a>
     <a mat-tab-link routerLink="login">Login</a>
     <a mat-tab-link routerLink="register">Register</a>
+  </nav>
+  <nav mat-tab-nav-bar class="main-toolbar-nav" [tabPanel]="tabPanel" *ngIf="(jwtToken$ | async)">
+    <a mat-tab-link routerLink="new-recipe">New</a>
+    <a mat-tab-link>{{(user$ | async)?.username}}</a>
+    <a mat-tab-link (click)="onClick()">Logout</a>
   </nav>
 </mat-toolbar>
 <mat-tab-nav-panel #tabPanel>
