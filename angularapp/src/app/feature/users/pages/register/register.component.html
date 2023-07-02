@@ -34,7 +34,7 @@
       </mat-select>
     </mat-form-field>
 
-    <button mat-raised-button type="submit" class="form-btn">Sign up</button>
+    <button mat-raised-button type="submit" class="form-btn" [disabled]="buttonDisabled">Sign up</button>
     <div *ngIf="error">{{error}}</div>
   </form>  
 </div>

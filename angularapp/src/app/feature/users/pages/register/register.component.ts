@@ -17,6 +17,7 @@ export class RegisterComponent {
   fields = ["Informatyka", "Automatyka i Robotyka", "Elektrotechnika", "Inzynieria Odnawialna"]
   hide = true
   error = false
+  buttonDisabled = true
 
   registerGroup = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
@@ -25,6 +26,12 @@ export class RegisterComponent {
     index: new FormControl(0, [Validators.required, Validators.min(5)]),
     field: new FormControl(this.fields[0], Validators.required)
   })
+
+  ngOnInit() {
+    this.registerGroup.valueChanges.subscribe(() => {
+      this.buttonDisabled = this.registerGroup.invalid
+    })
+  }
 
   onSubmit() {
     console.log(this.registerGroup.value)
