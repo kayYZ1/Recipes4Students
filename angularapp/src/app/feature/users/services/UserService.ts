@@ -9,7 +9,7 @@ export class UserService {
   constructor(private _http: HttpClient) { }
   
 
-  userRegister(values: any) {
+  userRegister(values: User) {
     return this._http.post("http://localhost:5200/Auth/register", values)
   }
 }

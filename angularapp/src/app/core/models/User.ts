@@ -1,7 +1,7 @@
 export interface User {
-  email?: string
-  username?: string
-  passwordHash?: string
-  index?: number
-  field?: string
+  email: string
+  username: string
+  password: string
+  index: number
+  field: string
 }
