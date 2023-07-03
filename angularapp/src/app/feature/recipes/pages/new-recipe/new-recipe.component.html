@@ -1,1 +1,27 @@
-<p>new-recipe works!</p>
+<div class="new-recipe-container">
+  <h2>Add a new recipe.</h2>
+  <form class="new-recipe-form">
+    <mat-form-field class="input-full-width">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Rice with strawberries..." formControlName="title" required>
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width">
+      <mat-label>Description</mat-label>
+      <input matInput placeholder="I like it because..." formControlName="description" required>
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width">
+      <mat-label>Image</mat-label>
+      <input matInput placeholder="Valid link to the image..." formControlName="imageURL" required>
+    </mat-form-field>
+    
+    <mat-form-field class="input-full-width">
+      <mat-label>Recipe</mat-label>
+      <input matInput placeholder="Valid link to a recipe page..." formControlName="recipeURL" required>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" class="form-btn">Sign up</button>
+  </form>
+  <mat-divider></mat-divider>
+</div>
