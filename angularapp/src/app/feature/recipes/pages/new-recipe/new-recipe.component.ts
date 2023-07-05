@@ -21,6 +21,8 @@ export class NewRecipeComponent {
     recipeURL: new FormControl('', Validators.required),
   });
 
+  user$ = this._store.select(fromAuth.selectUser)
+  
   ngOnInit() {
     this.newRecipeForm.valueChanges.subscribe(() => {
       this.buttonDisabled = this.newRecipeForm.invalid

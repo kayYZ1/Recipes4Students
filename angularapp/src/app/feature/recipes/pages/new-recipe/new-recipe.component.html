@@ -28,7 +28,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>{{title.value}}</mat-card-title>
-        <mat-card-subtitle>Posted by logged user etc.</mat-card-subtitle>
+        <mat-card-subtitle>{{(user$ | async)?.username}} // {{(user$ | async)?.index}}</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image="" src="https://placehold.co/600x400"
         alt="Photo of a Shiba Inu">
@@ -41,7 +41,7 @@
       </mat-card-content>
       <mat-card-actions align="end">
         <button mat-button="">Follow </button>
-        <button mat-button="">Delete </button>
+        <button mat-button="" disabled>Delete </button>
 
       </mat-card-actions>
     </mat-card>
