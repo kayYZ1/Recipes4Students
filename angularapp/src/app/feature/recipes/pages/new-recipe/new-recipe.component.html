@@ -18,7 +18,7 @@
 
     <mat-form-field class="input-full-width">
       <mat-label>Recipe</mat-label>
-      <input matInput placeholder="Valid link to a recipe page..." formControlName="recipeURL" required>
+      <input matInput placeholder="Valid link to a recipe page..." #recipeURL formControlName="recipeURL" required>
     </mat-form-field>
 
     <button mat-raised-button type="submit" class="form-btn" [disabled]="buttonDisabled">Add a new recipe</button>
@@ -31,7 +31,9 @@
         <mat-card-subtitle>{{(user$ | async)?.username}} // {{(user$ | async)?.index}}</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image="" src="https://placehold.co/600x400"
-        alt="Photo of a Shiba Inu">
+        alt="Placeholder photo" *ngIf="!imageURL.value">
+        <img mat-card-image="" src="{{imageURL.value}}"
+        alt="User's photo" *ngIf="imageURL.value">
       <mat-card-content>
         <p style="padding-top: 5px;">
           <strong>Description</strong>
@@ -40,8 +42,11 @@
         </p>
       </mat-card-content>
       <mat-card-actions align="end">
-        <button mat-button="">Follow </button>
-        <button mat-button="" disabled>Delete </button>
+        <button mat-button="" disabled *ngIf="!recipeURL.value">Follow</button>
+        <button mat-button="" *ngIf="recipeURL.value" class="follow-btn-animation">
+          Follow
+        </button>
+        <button mat-button="" disabled>Delete</button>
 
       </mat-card-actions>
     </mat-card>
