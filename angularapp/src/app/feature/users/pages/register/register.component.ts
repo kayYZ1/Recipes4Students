@@ -27,6 +27,13 @@ export class RegisterComponent {
     field: new FormControl(this.fields[0], Validators.required)
   })
 
+  limitInputLength(inputElement: HTMLInputElement) {
+    const maxLength = 6;
+    if (inputElement.value.length > maxLength) {
+      inputElement.value = inputElement.value.slice(0, maxLength);
+    }
+  }
+
   ngOnInit() {
     this.registerGroup.valueChanges.subscribe(() => {
       this.buttonDisabled = this.registerGroup.invalid

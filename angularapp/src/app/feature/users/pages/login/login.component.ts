@@ -16,11 +16,18 @@ export class LoginComponent {
   constructor(private store: Store) {}
   error = false;
   hide = true;
+  buttonDisabled = true
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
+
+  ngOnInit() {
+    this.loginForm.valueChanges.subscribe(() => {
+      this.buttonDisabled = this.loginForm.invalid
+    })
+  }
 
   onSubmit() {
     console.log(this.loginForm.value);

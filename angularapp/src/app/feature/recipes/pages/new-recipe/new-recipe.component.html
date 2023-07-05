@@ -1,27 +1,49 @@
 <div class="new-recipe-container">
-  <h2>Add a new recipe.</h2>
-  <form class="new-recipe-form">
+  <form class="new-recipe-form" [formGroup]="newRecipeForm">
+    <h2>Add a new recipe.</h2>
     <mat-form-field class="input-full-width">
       <mat-label>Title</mat-label>
-      <input matInput placeholder="Rice with strawberries..." formControlName="title" required>
+      <input matInput placeholder="Rice with strawberries..." #title formControlName="title" required>
     </mat-form-field>
 
     <mat-form-field class="input-full-width">
       <mat-label>Description</mat-label>
-      <input matInput placeholder="I like it because..." formControlName="description" required>
+      <input matInput placeholder="I like it because..." #description formControlName="description" required>
     </mat-form-field>
 
     <mat-form-field class="input-full-width">
       <mat-label>Image</mat-label>
-      <input matInput placeholder="Valid link to the image..." formControlName="imageURL" required>
+      <input matInput placeholder="Valid link to the image..." #imageURL formControlName="imageURL" required>
     </mat-form-field>
-    
+
     <mat-form-field class="input-full-width">
       <mat-label>Recipe</mat-label>
       <input matInput placeholder="Valid link to a recipe page..." formControlName="recipeURL" required>
     </mat-form-field>
 
-    <button mat-raised-button type="submit" class="form-btn">Sign up</button>
+    <button mat-raised-button type="submit" class="form-btn" [disabled]="buttonDisabled">Add a new recipe</button>
   </form>
-  <mat-divider></mat-divider>
+  <div class="preview-card" style="margin-top: 5vh;">
+    <h2>Preview</h2>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{title.value}}</mat-card-title>
+        <mat-card-subtitle>Posted by logged user etc.</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image="" src="https://placehold.co/600x400"
+        alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p style="padding-top: 5px;">
+          <strong>Description</strong>
+          <br>
+          {{description.value}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button="">Follow </button>
+        <button mat-button="">Delete </button>
+
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
