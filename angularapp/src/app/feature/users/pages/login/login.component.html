@@ -14,7 +14,7 @@
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       </button>
     </mat-form-field>
-    <button mat-raised-button type="submit" class="form-btn">Sign in</button>
+    <button mat-raised-button type="submit" class="form-btn" [disabled]="buttonDisabled">Sign in</button>
   </form>
   <div *ngIf="error">
     {{error}}

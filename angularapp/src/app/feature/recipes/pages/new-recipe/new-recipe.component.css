@@ -1,20 +1,23 @@
 .new-recipe-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 45vh;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 50vh;
 }
 
 h2 {
   font-weight: 300;
   font-size: 2em;
+  align-self: flex-start;
 }
 
 .new-recipe-form {
+  margin-top: 5vh;
   min-width: 20vh;
   max-width: 40vh;
-  width: 100%;
+  width: calc(50% - 1vh);
+  margin-right: 5vh;
 }
 
 .input-full-width {
@@ -27,4 +30,22 @@ h2 {
   font-weight: 300;
   font-size: 0.9em;
   text-transform: uppercase;
+}
+
+.preview-card {
+  text-align: center;
+  width: calc(50% - 1vh);
+  width: 100%;
+  max-width: 40vh;
+}
+
+@media (max-width: 768px) {
+  .new-recipe-form {
+    margin-right: 0;
+    margin-bottom: 5vh;
+  }
+
+  .preview-card {
+    margin-top: 0;
+  }
 }
