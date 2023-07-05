@@ -36,7 +36,7 @@ h2 {
   text-align: center;
   width: calc(50% - 1vh);
   width: 100%;
-  max-width: 40vh;
+  max-width: 55vh;
 }
 
 @media (max-width: 768px) {
