@@ -26,6 +26,16 @@ h2 {
   /* Adjust this based on your desired form width */
 }
 
+.user-inputs {
+  width: 100%;
+}
+
+.input-half-width {
+  width: 50%;
+  max-width: 18vh;
+  /* Adjust this based on your desired form width */
+}
+
 .form-btn {
   font-weight: 300;
   font-size: 0.9em;
@@ -36,7 +46,14 @@ h2 {
   text-align: center;
   width: calc(50% - 1vh);
   width: 100%;
-  max-width: 40vh;
+  max-width: 55vh;
+}
+
+img {
+  max-height: 20rem;
+  max-width: 30rem;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 
 @media (max-width: 768px) {
@@ -48,4 +65,18 @@ h2 {
   .preview-card {
     margin-top: 0;
   }
+}
+
+.follow-btn-animation{ 
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+  70% { transform:translateY(0%); }
+  80% { transform:translateY(-15%); }
+  90% { transform:translateY(0%); }
+  95% { transform:translateY(-7%); }
+  97% { transform:translateY(0%); }
+  99% { transform:translateY(-3%); }
+  100% { transform:translateY(0); }
 }
