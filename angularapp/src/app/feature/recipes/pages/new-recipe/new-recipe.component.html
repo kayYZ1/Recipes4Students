@@ -1,5 +1,5 @@
 <div class="new-recipe-container">
-  <form class="new-recipe-form" [formGroup]="newRecipeForm">
+  <form class="new-recipe-form" [formGroup]="newRecipeForm" (ngSubmit)="onSubmit()">
     <h2>Add a new recipe.</h2>
     <mat-form-field class="input-full-width">
       <mat-label>Title</mat-label>
@@ -21,6 +21,15 @@
       <input matInput placeholder="Valid link to a recipe page..." #recipeURL formControlName="recipeURL" required>
     </mat-form-field>
 
+    <div class="user-inputs" *ngIf="user$ | async">
+      <mat-form-field class="input-half-width" style="margin-right: 1.5em;">
+        <input matInput formControlName="username">
+      </mat-form-field>
+      <mat-form-field class="input-half-width">
+        <input matInput formControlName="index">
+      </mat-form-field>
+    </div>
+
     <button mat-raised-button type="submit" class="form-btn" [disabled]="buttonDisabled">Add a new recipe</button>
   </form>
   <div class="preview-card" style="margin-top: 5vh;">
@@ -30,10 +39,8 @@
         <mat-card-title>{{title.value}}</mat-card-title>
         <mat-card-subtitle>Added by {{(user$ | async)?.username}}</mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image="" src="https://placehold.co/600x400"
-        alt="Placeholder photo" *ngIf="!imageURL.value">
-        <img mat-card-image="" src="{{imageURL.value}}"
-        alt="User's photo" *ngIf="imageURL.value">
+      <img mat-card-image="" src="https://placehold.co/600x400" alt="Placeholder photo" *ngIf="!imageURL.value">
+      <img mat-card-image="" src="{{imageURL.value}}" alt="User's photo" *ngIf="imageURL.value">
       <mat-card-content>
         <p style="padding-top: 5px;">
           <strong>Description</strong>

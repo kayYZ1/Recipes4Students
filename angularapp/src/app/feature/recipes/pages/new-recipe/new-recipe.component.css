@@ -26,6 +26,16 @@ h2 {
   /* Adjust this based on your desired form width */
 }
 
+.user-inputs {
+  width: 100%;
+}
+
+.input-half-width {
+  width: 50%;
+  max-width: 18vh;
+  /* Adjust this based on your desired form width */
+}
+
 .form-btn {
   font-weight: 300;
   font-size: 0.9em;
@@ -37,6 +47,13 @@ h2 {
   width: calc(50% - 1vh);
   width: 100%;
   max-width: 55vh;
+}
+
+img {
+  max-height: 20rem;
+  max-width: 30rem;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
 
 @media (max-width: 768px) {

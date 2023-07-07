@@ -3,6 +3,6 @@ export interface Recipe {
   description: string
   imageURL: string
   recipeURL: string
-  username: string
-  index: string
+  username?: string
+  index?: number
 }
